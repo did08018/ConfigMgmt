@@ -45,8 +45,8 @@ with open(device_cfg_old, 'r') as old_file, open('cfgfiles/' + ip + '_' + dateti
     
 #Sending the differences via email
 #Defining the e-mail parameters
-fromaddr = 'mihai.python3@gmail.com'
-toaddr = 'mihai.python3@gmail.com'
+fromaddr = 'user1@gmail.com'
+toaddr = 'user2@gmail.com'
 
 #More on MIME and multipart: https://en.wikipedia.org/wiki/MIME#Multipart_messages
 msg = MIMEMultipart()
@@ -62,7 +62,7 @@ server = smtplib.SMTP('smtp.gmail.com', 587)
 server.starttls()
 
 #Logging in to Gmail and sending the e-mail
-server.login('mihai.python3', 'python3.7')
+server.login('user1', 'python3.7')
 server.sendmail(fromaddr, toaddr, msg.as_string())
 server.quit()
 
